@@ -1,0 +1,119 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Light blue background */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    background-color: #1E90FF; /* DodgerBlue */
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #187bcd; /* Slightly darker blue */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Center the nav items horizontally */
+    gap: 20px;
+    padding: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #105fa3; /* Darker hover color */
+}
+
+/* Main Content Styles */
+main {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+main h2 {
+    color: #1E90FF;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+main p {
+    margin-bottom: 20px;
+}
+
+/* Container for the Bookings Table */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: #187bcd;
+    color: #fff;
+}
+
+thead th {
+    padding: 12px;
+    text-align: left;
+    font-weight: normal;
+}
+
+tbody tr {
+    border-bottom: 1px solid #ccc;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody td {
+    padding: 12px;
+    vertical-align: middle;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1E90FF;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto; /* Sticks the footer to the bottom of the page if content is short */
+}

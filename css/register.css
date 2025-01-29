@@ -1,0 +1,161 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F3F8FE; /* Soft blue background for edges */
+    color: #333;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Register Page Container */
+.register-page {
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    min-height: 500px; /* Enforce a minimum height */
+}
+
+/* Left Image Container */
+.image-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Hide any overflow from the image */
+}
+
+/* Image Styling */
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Right Form Container */
+.form-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background-color: #F9FBFF; /* Slightly lighter than white */
+}
+
+/* Registration Content */
+.register-content {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Page Title */
+.reg-title {
+    color: #1C3A5F; /* Darker blue heading */
+    margin-bottom: 20px;
+}
+
+/* Success Message */
+.success {
+    background-color: #E5F9E7;
+    color: #2B7A0B;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+/* Error Message */
+.error {
+    background-color: #FDE5E5;
+    color: #8B0000;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+/* Form Inputs */
+.register-content form input[type="text"],
+.register-content form input[type="email"],
+.register-content form input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Submit Button */
+.register-content form button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #1C3A5F;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.register-content form button[type="submit"]:hover {
+    background-color: #2A4E78;
+}
+
+/* OR text */
+.or {
+    margin: 15px 0;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Login Button */
+.login-btn {
+    width: 100%;
+    background-color: #F0F0F0;
+    border: none;
+    border-radius: 4px;
+    padding: 12px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.login-btn a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Hover effect for login button */
+.login-btn:hover {
+    background-color: #E0E0E0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .register-page {
+        flex-direction: column;
+        min-height: auto;
+        width: 90%;
+    }
+
+    .image-container {
+        display: none; /* Hide the image on smaller screens or adjust as preferred */
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,114 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F3F8FE; /* Light blue background */
+    color: #333;
+}
+
+/* Header styling (consistent with others) */
+header {
+    background-color: #1C3A5F; /* Deep blue */
+    color: #FFFFFF;
+    padding: 15px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+header nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* Main wrapper */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Container for table & heading */
+.container {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border: 1px solid #E3E9EF;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(28, 58, 95, 0.1);
+}
+
+/* Page heading */
+.container h2 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: #1C3A5F;
+    border-left: 4px solid #1C3A5F;
+    padding-left: 8px;
+}
+
+/* Section heading */
+.container h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #1C3A5F;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: #FFFFFF;
+}
+
+table thead {
+    background-color: #DCE6F4;
+}
+
+table th,
+table td {
+    border: 1px solid #E3E9EF;
+    text-align: left;
+    padding: 12px 15px;
+    font-size: 0.95rem;
+}
+
+table th {
+    color: #1C3A5F;
+    font-weight: 600;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #F7FAFD;
+}
+
+table tbody tr:hover {
+    background-color: #F0F7FF;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #1C3A5F;
+    color: #FFFFFF;
+    font-size: 0.9rem;
+    margin-top: 20px;
+}

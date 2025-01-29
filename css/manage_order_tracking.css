@@ -1,0 +1,116 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Light blue background */
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background-color: #1E90FF; /* DodgerBlue */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #187bcd; /* Slightly darker blue */
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+}
+
+header a:hover {
+    background-color: #105fa3; /* Darker hover color */
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+}
+
+section h2 {
+    color: #1E90FF;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: #187bcd;
+    color: #fff;
+}
+
+thead th {
+    padding: 12px;
+    text-align: left;
+    font-weight: normal;
+}
+
+tbody tr {
+    border-bottom: 1px solid #ccc;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody td {
+    padding: 12px;
+}
+
+/* Form and Button Styles */
+form {
+    display: inline-block;
+    margin: 0;
+}
+
+select {
+    padding: 5px 8px;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+    margin-right: 5px;
+}
+
+button[type="submit"] {
+    background-color: #1E90FF;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #187bcd;
+}

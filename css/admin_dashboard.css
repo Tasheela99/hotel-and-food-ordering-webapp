@@ -1,0 +1,154 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Light blue background */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    background-color: #1E90FF; /* DodgerBlue */
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #187bcd; /* Slightly darker blue */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Center the nav items horizontally */
+    gap: 20px;
+    padding: 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #105fa3; /* Darker hover color */
+}
+
+/* Main Content Styles */
+main {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+main h2 {
+    color: #1E90FF;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+main p {
+    margin-bottom: 20px;
+}
+
+/* Table Styles */
+section {
+    margin-top: 40px;
+}
+
+section h2 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #1E90FF;
+}
+
+table {
+    width: 100%;
+    max-width: 1000px; /* Optional max-width */
+    margin: 0 auto; /* Center the table */
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: #187bcd;
+    color: #fff;
+}
+
+thead th {
+    padding: 12px;
+    text-align: left;
+    font-weight: normal;
+}
+
+tbody tr {
+    border-bottom: 1px solid #ccc;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody td {
+    padding: 12px;
+    vertical-align: middle;
+    text-align: left;
+}
+
+/* Delete Button Styles */
+.delete-btn {
+    background-color: red;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+    background-color: #cc0000;
+}
+
+/* Success and Error Messages */
+.success {
+    color: green;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1E90FF;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto; /* Push the footer to the bottom if page is short */
+}

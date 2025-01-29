@@ -1,0 +1,194 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F3F8FE; /* Light blue background */
+    color: #333;
+}
+
+/* Header styling */
+header {
+    background-color: #1C3A5F; /* Deep blue */
+    color: #FFFFFF;
+    padding: 15px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+header a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+/* Main container styling */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Section headings */
+section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #1C3A5F;
+    border-left: 4px solid #1C3A5F;
+    padding-left: 8px;
+}
+
+/* Food grid styling */
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.food-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E3E9EF;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(28, 58, 95, 0.1);
+    transition: transform 0.2s ease-in-out;
+    padding-bottom: 10px; /* extra space below */
+}
+
+.food-card:hover {
+    transform: translateY(-4px);
+}
+
+.food-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-bottom: 1px solid #E3E9EF;
+}
+
+.food-card h4 {
+    margin: 10px 0 5px;
+    color: #1C3A5F;
+    font-size: 1.1rem;
+}
+
+.food-card p {
+    margin: 5px 10px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+/* Add to Cart button inside each food-card */
+.food-card form {
+    margin-top: 10px;
+}
+
+.food-card button {
+    background-color: #1C3A5F;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.food-card button:hover {
+    background-color: #2A4E78; /* Slightly lighter blue on hover */
+}
+
+/* Table booking form */
+section form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    background-color: #FFFFFF;
+    padding: 15px;
+    border: 1px solid #E3E9EF;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(28, 58, 95, 0.1);
+}
+
+section form label {
+    font-weight: 600;
+    color: #1C3A5F;
+    min-width: 100px;
+}
+
+section form select,
+section form input[type="date"],
+section form input[type="time"] {
+    flex: 1;
+    padding: 6px;
+    border: 1px solid #CCC;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+section form button {
+    background-color: #1C3A5F;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-left: auto; /* push it to the end of the row */
+}
+
+section form button:hover {
+    background-color: #2A4E78;
+}
+
+/* User's bookings table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(28, 58, 95, 0.1);
+}
+
+table thead {
+    background-color: #DCE6F4;
+}
+
+table th,
+table td {
+    border: 1px solid #E3E9EF;
+    text-align: left;
+    padding: 10px;
+    font-size: 0.95rem;
+}
+
+table th {
+    color: #1C3A5F;
+    font-weight: 600;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #F7FAFD;
+}
+
+table tbody tr:hover {
+    background-color: #F0F7FF;
+}

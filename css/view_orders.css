@@ -1,0 +1,98 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F3F8FE; /* Light blue background */
+    color: #333;
+}
+
+/* Header styling (same style as before for consistency) */
+header {
+    background-color: #1C3A5F; /* Deep blue */
+    color: #FFFFFF;
+    padding: 15px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+header a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+/* Main container styling */
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Section heading */
+section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #1C3A5F;
+    border-left: 4px solid #1C3A5F;
+    padding-left: 8px;
+}
+
+/* Table styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(28, 58, 95, 0.1);
+}
+
+table thead {
+    background-color: #DCE6F4;
+}
+
+table th,
+table td {
+    border: 1px solid #E3E9EF;
+    text-align: left;
+    padding: 10px;
+    font-size: 0.95rem;
+}
+
+table th {
+    color: #1C3A5F;
+    font-weight: 600;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #F7FAFD;
+}
+
+table tbody tr:hover {
+    background-color: #F0F7FF;
+}
+
+/* Footer styling */
+footer {
+    margin: 20px auto 0;
+    text-align: center;
+    padding: 10px;
+    background-color: #1C3A5F;
+    color: #FFFFFF;
+    font-size: 0.9rem;
+}

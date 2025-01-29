@@ -1,0 +1,172 @@
+/* Base Reset/Body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f7fa; /* Light background color */
+}
+
+/* Header */
+header {
+    background-color: #1976d2; /* Blue color */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #2196f3; /* Slightly lighter blue than header */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    display: block;
+    padding: 14px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #1976d2;
+}
+
+/* Main Content */
+main {
+    max-width: 700px;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+main h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Success & Error Messages */
+.success {
+    background-color: #e0f7fa;
+    color: #006064;
+    border: 1px solid #b2ebf2;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.error {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Form Elements */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    font-weight: bold;
+    margin: 15px 0 5px;
+    color: #333;
+}
+
+form input[type="text"],
+form input[type="file"] {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input[type="text"]:focus,
+form input[type="file"]:focus {
+    outline: none;
+    border-color: #2196f3;
+    box-shadow: 0 0 5px rgba(33,150,243,0.2);
+}
+
+/* Update Button */
+button[type="submit"] {
+    margin-top: 25px;
+    padding: 12px;
+    background-color: #2196f3; /* Blue button */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #1976d2; /* Darker blue on hover */
+}
+
+/* Hotel Image Preview */
+main img {
+    margin-top: 10px;
+    border-radius: 5px;
+    max-width: 100px;
+    height: auto;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+footer {
+    background-color: #1976d2;
+    color: #fff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    position: relative;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    main {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li a {
+        text-align: center;
+    }
+}
