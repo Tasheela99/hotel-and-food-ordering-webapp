@@ -2,14 +2,44 @@
 session_start();
 include 'includes/database.php';
 
-// Check if user is logged in
+// 1. Handle form submission in the SAME file
+$contactMessage = '';
+
+// Check if the user just submitted the form via POST
+if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST['name'], $_POST['email'], $_POST['message'])) {
+    // Retrieve and sanitize form data
+    $name = trim($_POST['name']);
+    $email = trim($_POST['email']);
+    $message = trim($_POST['message']);
+
+    // Basic validation
+    if (!empty($name) && !empty($email) && !empty($message)) {
+        // Prepare and bind
+        $stmt = $conn->prepare("INSERT INTO contacts (name, email, message) VALUES (?, ?, ?)");
+        $stmt->bind_param("sss", $name, $email, $message);
+
+        // Attempt to execute the statement
+        if ($stmt->execute()) {
+            $contactMessage = '<p style="color: green;">Your message has been sent successfully!</p>';
+        } else {
+            $contactMessage = '<p style="color: red;">There was a problem sending your message. Please try again.</p>';
+        }
+
+        $stmt->close();
+    } else {
+        // If required fields are empty
+        $contactMessage = '<p style="color: red;">All fields are required. Please try again.</p>';
+    }
+}
+
+// 2. Check if user is logged in
 $isLoggedIn = isset($_SESSION['user_id']);
 
-// Fetch food items from the database
+// 3. Fetch food items from the database
 $sqlFood = "SELECT * FROM food_items ORDER BY name ASC";
 $resultFood = $conn->query($sqlFood);
 
-// Fetch hotels from the database
+// 4. Fetch hotels from the database
 $sqlHotels = "SELECT * FROM hotels ORDER BY name ASC";
 $resultHotels = $conn->query($sqlHotels);
 ?>
@@ -28,13 +58,11 @@ $resultHotels = $conn->query($sqlHotels);
             navMenu.classList.toggle('active');
         }
     </script>
-
 </head>
 <body>
 
 <nav class="nav">
     <div class="nav-container">
-
         <!-- BRAND/LOGO AREA (Optional) -->
         <div class="nav-brand">
             <a href="#">MyWedding</a>
@@ -60,11 +88,8 @@ $resultHotels = $conn->query($sqlHotels);
             <div class="bar"></div>
             <div class="bar"></div>
         </div>
-
     </div>
 </nav>
-
-
 
 <main>
     <!-- Hero Section with Wedding-Themed Content -->
@@ -170,15 +195,17 @@ $resultHotels = $conn->query($sqlHotels);
             <?php if ($resultHotels && $resultHotels->num_rows > 0): ?>
                 <?php while ($row = $resultHotels->fetch_assoc()): ?>
                     <div class="grid-card">
-                        <img src="<?php echo htmlspecialchars($row['image']); ?>"
-                             alt="<?php echo htmlspecialchars($row['name']); ?>">
+                        <?php
+                        $imagePath = !empty($row['image']) ? $row['image'] : 'assets/images/default_hotel.jpg';
+                        ?>
+                        <img src="<?php echo htmlspecialchars($imagePath); ?>" alt="<?php echo htmlspecialchars($row['name']); ?>">
                         <h4><?php echo htmlspecialchars($row['name']); ?></h4>
                         <p><strong>Location:</strong> <?php echo htmlspecialchars($row['location']); ?></p>
                         <p><strong>Contact:</strong> <?php echo htmlspecialchars($row['contact']); ?></p>
 
                         <!-- Show "Book Hotel" only if user is logged in -->
                         <?php if ($isLoggedIn): ?>
-                            <form method="POST" action="/views/book_hotel.php">
+                            <form method="POST" action="/views/user/book_hotel.php">
                                 <input type="hidden" name="hotel_id" value="<?php echo $row['hotel_id']; ?>">
                                 <button type="submit">Reserve Now</button>
                             </form>
@@ -197,8 +224,13 @@ $resultHotels = $conn->query($sqlHotels);
     <section id="contact" class="contact-section">
         <div class="container-contact">
             <h2>Contact Us</h2>
+
+            <!-- Display success/error message if any -->
+            <?php echo $contactMessage; ?>
+
             <p>Have any questions or special requests for your wedding? Feel free to reach out to us!</p>
-            <form action="contact.php" method="POST">
+            <!-- Note: 'action' is empty, so it submits to the same page -->
+            <form method="POST">
                 <div class="form-group">
                     <input type="text" name="name" placeholder="Your Name" required>
                 </div>
@@ -218,7 +250,6 @@ $resultHotels = $conn->query($sqlHotels);
     <p>&copy; 2025 Wedding & Venue Management System. All rights reserved.</p>
 </footer>
 
-</body>
-</html>
-
-<?php $conn->close(); ?>
+<?php
+$conn->close();
+?>

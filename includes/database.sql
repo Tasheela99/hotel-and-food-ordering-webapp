@@ -23,18 +23,34 @@ CREATE TABLE restaurant_tables
     is_available BOOLEAN DEFAULT TRUE
 );
 
+
+CREATE TABLE hotels
+(
+    hotel_id   INT AUTO_INCREMENT PRIMARY KEY,
+    name       VARCHAR(150) NOT NULL,
+    location   VARCHAR(255) NOT NULL,
+    image      VARCHAR(750),
+    contact    VARCHAR(15)  NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    user_id    INT          NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users (user_id)
+);
+
 -- Table for table bookings
 CREATE TABLE table_bookings
 (
     booking_id   INT AUTO_INCREMENT PRIMARY KEY,
     user_id      INT  NOT NULL,
     table_id     INT  NOT NULL,
+    hotel_id     INT  NOT NULL,
     booking_date DATE NOT NULL,
     booking_time TIME NOT NULL,
+    description  VARCHAR(255),
     status       ENUM ('PENDING', 'CONFIRMED', 'CANCELLED') DEFAULT 'PENDING',
     created_at   TIMESTAMP                                  DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users (user_id),
-    FOREIGN KEY (table_id) REFERENCES restaurant_tables (table_id)
+    FOREIGN KEY (table_id) REFERENCES restaurant_tables (table_id),
+    FOREIGN KEY (hotel_id) REFERENCES hotels (hotel_id)
 );
 
 -- Table for food items
@@ -106,28 +122,36 @@ CREATE TABLE order_tracking
     FOREIGN KEY (order_id) REFERENCES orders (order_id)
 );
 
-CREATE TABLE hotels
-(
-    hotel_id   INT AUTO_INCREMENT PRIMARY KEY,
-    name       VARCHAR(150) NOT NULL,
-    location   VARCHAR(255) NOT NULL,
-    image      VARCHAR(750),
-    contact    VARCHAR(15)  NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    user_id    INT          NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES users (user_id)
-);
 
 CREATE TABLE hotel_bookings
 (
-    booking_id   INT AUTO_INCREMENT PRIMARY KEY,
-    user_id      INT  NOT NULL,
-    hotel_id     INT  NOT NULL,
-    booking_date DATE NOT NULL,
-    booking_time TIME NOT NULL,
-    number_of_people        INT            NOT NULL,
-    status       ENUM ('PENDING', 'CONFIRMED', 'CANCELLED') DEFAULT 'PENDING',
-    created_at   TIMESTAMP                                  DEFAULT CURRENT_TIMESTAMP,
+    booking_id       INT AUTO_INCREMENT PRIMARY KEY,
+    user_id          INT  NOT NULL,
+    hotel_id         INT  NOT NULL,
+    booking_date     DATE NOT NULL,
+    booking_time     TIME NOT NULL,
+    number_of_people INT  NOT NULL,
+    status           ENUM ('PENDING', 'CONFIRMED', 'CANCELLED') DEFAULT 'PENDING',
+    created_at       TIMESTAMP                                  DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES users (user_id),
     FOREIGN KEY (hotel_id) REFERENCES hotels (hotel_id)
+);
+
+CREATE TABLE contacts
+(
+    contact_id INT AUTO_INCREMENT PRIMARY KEY,
+    name       VARCHAR(100) NOT NULL,
+    email      VARCHAR(100) NOT NULL,
+    message    VARCHAR(100) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE feedback
+(
+    feedback_id      INT AUTO_INCREMENT PRIMARY KEY,
+    user_id          INT  NOT NULL,
+    name       VARCHAR(100) NOT NULL,
+    email      VARCHAR(100) NOT NULL,
+    created_at       TIMESTAMP                                  DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users (user_id)
 );

@@ -8,7 +8,7 @@
 /* Body */
 body {
     font-family: Arial, sans-serif;
-    background-color: #F3F8FE; /* Soft blue background for edges */
+    background-color: #F3F8FE;
     color: #333;
     height: 100vh;
     display: flex;
@@ -25,7 +25,7 @@ body {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    min-height: 500px; /* Enforce a minimum height */
+    min-height: 500px;
 }
 
 /* Left Image Container */
@@ -34,7 +34,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden; /* Hide any overflow from the image */
+    overflow: hidden;
 }
 
 /* Image Styling */
@@ -52,7 +52,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 40px;
-    background-color: #F9FBFF; /* Slightly lighter than white */
+    background-color: #F9FBFF;
 }
 
 /* Registration Content */
@@ -64,8 +64,37 @@ body {
 
 /* Page Title */
 .reg-title {
-    color: #1C3A5F; /* Darker blue heading */
+    color: #1C3A5F;
     margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab-link {
+    background-color: #f1f1f1;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    margin: 0 5px;
+    border-radius: 4px;
+}
+
+.tab-link:hover {
+    background-color: #ddd;
+}
+
+.tab-link.active {
+    background-color: #1C3A5F;
+    color: #fff;
 }
 
 /* Success Message */
@@ -89,13 +118,20 @@ body {
 /* Form Inputs */
 .register-content form input[type="text"],
 .register-content form input[type="email"],
-.register-content form input[type="password"] {
+.register-content form input[type="password"],
+.register-content form select,
+.register-content form textarea,
+.register-content form input[type="file"] {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
     border: 1px solid #CCC;
     border-radius: 4px;
     font-size: 1rem;
+}
+
+.register-content form textarea {
+    resize: vertical;
 }
 
 /* Submit Button */
@@ -108,6 +144,7 @@ body {
     border-radius: 4px;
     font-size: 1rem;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .register-content form button[type="submit"]:hover {
@@ -130,6 +167,7 @@ body {
     padding: 12px;
     cursor: pointer;
     margin-bottom: 10px;
+    transition: background-color 0.3s ease;
 }
 
 .login-btn a {
@@ -138,9 +176,17 @@ body {
     font-weight: bold;
 }
 
-/* Hover effect for login button */
 .login-btn:hover {
     background-color: #E0E0E0;
+}
+
+/* Tab Content */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
 }
 
 /* Responsive Design */
@@ -152,10 +198,23 @@ body {
     }
 
     .image-container {
-        display: none; /* Hide the image on smaller screens or adjust as preferred */
+        display: none;
     }
 
     .form-container {
         padding: 20px;
+    }
+
+    .register-content {
+        width: 100%;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .tab-link {
+        margin: 5px 0;
+        width: 100%;
     }
 }

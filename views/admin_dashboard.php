@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../includes/database.php'; // Update with your actual database connection file path
+include '../includes/database.php';
 
 // Check if the user is logged in and is an admin
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'ADMIN') {
@@ -37,6 +37,9 @@ $users_sql = "SELECT user_id, name, email, phone, role, created_at FROM users OR
 $users_result = $conn->query($users_sql);
 
 ?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,6 +63,7 @@ $users_result = $conn->query($users_sql);
         <li><a href="/views/admin/manage_tables.php">Manage Tables</a></li>
         <li><a href="/views/admin/manage_food_items.php">Manage Food Items</a></li>
         <li><a href="/views/admin/manage_all_hotel_bookings.php">Hotel Bookings</a></li>
+        <li><a href="/views/admin/view_all_contacts.php">View Contacts</a></li>
         <li><a href="logout.php">Logout</a></li>
     </ul>
 </nav>
