@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['booking_id']) && isse
 }
 
 // Fetch all bookings
-$bookings_sql = "SELECT tb.booking_id, u.name AS customer_name, rt.table_number, tb.booking_date, tb.booking_time, tb.status
+$bookings_sql = "SELECT tb.booking_id, u.name AS customer_name, rt.table_number, tb.booking_date, tb.booking_time, tb.status, tb.hotel_id
                  FROM table_bookings tb
                  JOIN users u ON tb.user_id = u.user_id
                  JOIN restaurant_tables rt ON tb.table_id = rt.table_id
@@ -50,6 +50,7 @@ $bookings_result = $conn->query($bookings_sql);
                 <thead>
                 <tr>
                     <th>Booking ID</th>
+                    <th>Hotel ID</th>
                     <th>Customer Name</th>
                     <th>Table</th>
                     <th>Date</th>
@@ -63,6 +64,7 @@ $bookings_result = $conn->query($bookings_sql);
                     <?php while ($booking = $bookings_result->fetch_assoc()): ?>
                         <tr>
                             <td><?php echo htmlspecialchars($booking['booking_id']); ?></td>
+                            <td><?php echo htmlspecialchars($booking['hotel_id']); ?></td>
                             <td><?php echo htmlspecialchars($booking['customer_name']); ?></td>
                             <td>Table <?php echo htmlspecialchars($booking['table_number']); ?></td>
                             <td><?php echo htmlspecialchars($booking['booking_date']); ?></td>

@@ -60,8 +60,8 @@ $users_result = $conn->query($users_sql);
         <li><a href="#">Manage Users</a></li>
         <li><a href="/views/admin/manage_table_bookings.php">Manage Table Bookings</a></li>
         <li><a href="/views/admin/manage_order_tracking.php">Manage Orders</a></li>
-        <li><a href="/views/admin/manage_tables.php">Manage Tables</a></li>
-        <li><a href="/views/admin/manage_food_items.php">Manage Food Items</a></li>
+        <li><a href="/views/admin/manage_tables.php">Manage Appointments</a></li>
+        <li><a href="/views/admin/manage_food_items.php">Manage Items</a></li>
         <li><a href="/views/admin/manage_all_hotel_bookings.php">Hotel Bookings</a></li>
         <li><a href="/views/admin/view_all_contacts.php">View Contacts</a></li>
         <li><a href="logout.php">Logout</a></li>
@@ -126,7 +126,7 @@ $users_result = $conn->query($users_sql);
 
 <!-- Footer -->
 <footer>
-    <p>&copy; 2025 Restaurant Management System</p>
+    <p>&copy; 2025  dreamplane.com. All rights reserved.</p>
 </footer>
 
 </body>

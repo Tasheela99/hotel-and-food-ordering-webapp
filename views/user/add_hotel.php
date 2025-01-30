@@ -183,9 +183,6 @@ $userHotel = $result->fetch_assoc();
     </section>
 </main>
 
-<footer>
-    <p>&copy; 2025 Hotel Management System</p>
-</footer>
 </body>
 </html>
 

@@ -179,6 +179,9 @@ $user_bookings_result = $user_bookings_stmt->get_result();
         </table>
     </section>
 </main>
+<footer>
+    <p>&copy; 2025  dreamplane.com. All rights reserved.</p>
+</footer>
 </body>
 </html>
 

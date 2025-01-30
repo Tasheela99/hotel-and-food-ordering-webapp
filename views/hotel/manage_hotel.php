@@ -130,9 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit">Update Hotel</button>
     </form>
 </main>
-<footer>
-    <p>&copy; 2025 Restaurant Management System</p>
-</footer>
+
 </body>
 </html>
 

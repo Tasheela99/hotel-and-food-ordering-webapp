@@ -48,7 +48,7 @@ $result = $conn->query($sql);
 </head>
 <body>
 <header>
-    <h1>Manage Tables</h1>
+    <h1>Manage Appointments</h1>
     <nav>
         <a href="/views/admin_dashboard.php">Dashboard</a>
     </nav>
@@ -56,7 +56,7 @@ $result = $conn->query($sql);
 
 <main>
     <section>
-        <h2>Add Table</h2>
+        <h2>Add Tables For The Appointment</h2>
         <?php if ($success) echo "<p class='success'>$success</p>"; ?>
         <?php if ($error) echo "<p class='error'>$error</p>"; ?>
         <form method="POST">
@@ -101,9 +101,6 @@ $result = $conn->query($sql);
     </section>
 </main>
 
-<footer>
-    <p>&copy; 2025 Restaurant Management System</p>
-</footer>
 </body>
 </html>
 

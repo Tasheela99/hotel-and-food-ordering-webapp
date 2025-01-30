@@ -165,11 +165,15 @@ $result = $conn->query($sql);
                             <td><?php echo htmlspecialchars($row['description']); ?></td>
                             <td>$<?php echo number_format($row['price'], 2); ?></td>
                             <td><?php echo htmlspecialchars($row['category']); ?></td>
-                            <td><img src="<?php echo htmlspecialchars($row['image']); ?>" alt="<?php echo htmlspecialchars($row['name']); ?>" class="food-image"></td>
+                            <td><img src="<?php echo htmlspecialchars($row['image']); ?>"
+                                     alt="<?php echo htmlspecialchars($row['name']); ?>" class="food-image"></td>
                             <td>
                                 <form method="POST" style="display:inline;">
                                     <input type="hidden" name="delete_id" value="<?php echo $row['food_id']; ?>">
-                                    <button type="submit" class="delete-btn" onclick="return confirm('Are you sure you want to delete this item?');">Delete</button>
+                                    <button type="submit" class="delete-btn"
+                                            onclick="return confirm('Are you sure you want to delete this item?');">
+                                        Delete
+                                    </button>
                                 </form>
                             </td>
                         </tr>
@@ -184,9 +188,6 @@ $result = $conn->query($sql);
             </table>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2025 Restaurant Management System</p>
-    </footer>
     </body>
     </html>
 

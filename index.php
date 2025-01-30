@@ -65,14 +65,14 @@ $resultHotels = $conn->query($sqlHotels);
     <div class="nav-container">
         <!-- BRAND/LOGO AREA (Optional) -->
         <div class="nav-brand">
-            <a href="#">MyWedding</a>
+            <a href="#">Dream Plan</a>
         </div>
 
         <!-- NAVIGATION LINKS -->
         <ul class="nav-menu">
             <li><a href="#">Home</a></li>
-            <li><a href="#">Wedding Catering Menu</a></li>
-            <li><a href="#">Wedding Venues</a></li>
+            <li><a href="#catering">Wedding Items</a></li>
+            <li><a href="#hotels">Hotels</a></li>
 
             <!-- Show Login if not logged in, Logout if logged in -->
             <?php if ($isLoggedIn): ?>
@@ -155,7 +155,7 @@ $resultHotels = $conn->query($sqlHotels);
 
     <!-- Section for Available Food (Wedding Catering) Items -->
     <section id="catering">
-        <h3 class="row-title">Our Wedding Catering Options</h3>
+        <h3 class="row-title">Our Wedding Items</h3>
         <div class="grid-container">
             <?php if ($resultFood && $resultFood->num_rows > 0): ?>
                 <?php while ($row = $resultFood->fetch_assoc()): ?>
@@ -189,7 +189,7 @@ $resultHotels = $conn->query($sqlHotels);
     </div>
 
     <!-- Section for Available Hotels (Wedding Venues) -->
-    <section>
+    <section id="hotels">
         <h3 class="row-title">Our Wedding Venue Partners</h3>
         <div class="grid-container">
             <?php if ($resultHotels && $resultHotels->num_rows > 0): ?>
@@ -247,7 +247,7 @@ $resultHotels = $conn->query($sqlHotels);
 </main>
 
 <footer>
-    <p>&copy; 2025 Wedding & Venue Management System. All rights reserved.</p>
+    <p>&copy; 2025  dreamplane.com. All rights reserved.</p>
 </footer>
 
 <?php

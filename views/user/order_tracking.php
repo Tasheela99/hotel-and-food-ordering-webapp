@@ -84,9 +84,6 @@ $order_tracking_stmt->close();
     </div>
 </main>
 
-<footer>
-    <p>&copy; 2025 Restaurant Management System. All rights reserved.</p>
-</footer>
 
 <?php $conn->close(); ?>
 </body>

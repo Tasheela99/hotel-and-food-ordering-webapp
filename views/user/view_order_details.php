@@ -117,7 +117,7 @@ if (!$order_info) {
 </main>
 
 <footer>
-    <p>&copy; 2025 Restaurant Management System</p>
+    <p>&copy; 2025  dreamplane.com. All rights reserved.</p>
 </footer>
 
 <?php

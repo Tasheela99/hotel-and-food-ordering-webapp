@@ -77,7 +77,7 @@ $orders_result = $orders_stmt->get_result();
 </main>
 
 <footer>
-    <p>&copy; 2025 Restaurant Management System</p>
+    <p>&copy; 2025  dreamplane.com. All rights reserved.</p>
 </footer>
 
 </body>

@@ -129,10 +129,6 @@ if ($order_result->num_rows > 0) {
     </div>
 </main>
 
-<footer>
-    <p>&copy; 2025 Restaurant Management System. All rights reserved.</p>
-</footer>
-
 <?php $conn->close(); ?>
 </body>
 </html>
