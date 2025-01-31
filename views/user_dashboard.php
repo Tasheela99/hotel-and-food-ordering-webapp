@@ -99,7 +99,8 @@ $user_bookings_result = $user_bookings_stmt->get_result();
 
     <!-- Table Booking Section -->
     <section>
-        <h3>Make an Appointment</h3>
+        <h3>Plan Your Wedding With Us</h3>
+        <h4>Make An Appointment With Us</h4>
         <form method="POST" action="/views/user/book_table.php">
             <label for="hotel_id">Select Hotel:</label>
             <select id="hotel_id" name="hotel_id" required>

@@ -25,7 +25,7 @@ if (!$hotel) {
 $hotel_id = $hotel['hotel_id'];
 
 // Fetch hotel bookings
-$sqlBookings = "SELECT hb.booking_id, u.name AS user_name, hb.booking_date, hb.booking_time, hb.status 
+$sqlBookings = "SELECT hb.booking_id, u.name AS user_name, u.phone AS user_mobile, hb.booking_date, hb.booking_time, hb.status 
                 FROM hotel_bookings hb
                 JOIN users u ON hb.user_id = u.user_id
                 WHERE hb.hotel_id = ?
@@ -66,6 +66,7 @@ $resultBookings = $stmt->get_result();
             <thead>
             <tr>
                 <th>Guest Name</th>
+                <th>Guest Mobile</th>
                 <th>Booking Date</th>
                 <th>Booking Time</th>
                 <th>Status</th>
@@ -76,6 +77,7 @@ $resultBookings = $stmt->get_result();
                 <?php while ($row = $resultBookings->fetch_assoc()): ?>
                     <tr>
                         <td><?php echo htmlspecialchars($row['user_name']); ?></td>
+                        <td><?php echo htmlspecialchars($row['user_mobile']); ?></td>
                         <td><?php echo htmlspecialchars($row['booking_date']); ?></td>
                         <td><?php echo htmlspecialchars($row['booking_time']); ?></td>
                         <td><?php echo htmlspecialchars($row['status']); ?></td>

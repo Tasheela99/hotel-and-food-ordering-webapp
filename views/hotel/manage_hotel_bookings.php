@@ -24,12 +24,12 @@ if (!$hotel) {
 
 $hotel_id = $hotel['hotel_id'];
 
-// Fetch hotel bookings
-$sqlBookings = "SELECT hb.booking_id, u.name AS user_name, hb.booking_date, hb.booking_time, hb.status 
+$sqlBookings = "SELECT hb.booking_id, u.name AS user_name, u.phone AS user_mobile, hb.booking_date, hb.booking_time, hb.status 
                 FROM hotel_bookings hb
                 JOIN users u ON hb.user_id = u.user_id
                 WHERE hb.hotel_id = ?
                 ORDER BY hb.booking_date ASC, hb.booking_time ASC";
+
 
 $stmt = $conn->prepare($sqlBookings);
 $stmt->bind_param("i", $hotel_id);
@@ -92,6 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['booking_id']) && isse
         <thead>
         <tr>
             <th>Guest Name</th>
+            <th>Mobile</th>
             <th>Booking Date</th>
             <th>Booking Time</th>
             <th>Status</th>
@@ -103,9 +104,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['booking_id']) && isse
             <?php while ($row = $resultBookings->fetch_assoc()): ?>
                 <tr>
                     <td><?php echo htmlspecialchars($row['user_name']); ?></td>
+                    <td><?php echo htmlspecialchars($row['user_mobile']); ?></td>
                     <td><?php echo htmlspecialchars($row['booking_date']); ?></td>
                     <td><?php echo htmlspecialchars($row['booking_time']); ?></td>
                     <td><?php echo htmlspecialchars($row['status']); ?></td>
+
                     <td>
                         <form method="POST">
                             <input type="hidden" name="booking_id" value="<?php echo $row['booking_id']; ?>">

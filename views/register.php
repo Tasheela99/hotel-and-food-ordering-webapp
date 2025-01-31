@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'includes/database.php';
+include '../includes/database.php';
 $userSuccess = $userError = $hotelSuccess = $hotelError = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register_user'])) {
@@ -98,8 +98,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register_hotel'])) {
         $check_stmt->close();
     }
 }
-
-$conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
